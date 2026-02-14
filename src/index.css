@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-peach-100: #fff3e0;
+  --color-peach-200: #ffe0b2;
+  --color-peach-300: #fbbf7c;
+  --color-peach-400: #f9a825;
+  --color-mint-200: #a7f3d0;
+  --color-mint-300: #6ee7b7;
+  --color-mint-400: #34d399;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global background gradient */
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(
+    175deg,
+    #fffbf0 0%,
+    #fff1e6 15%,
+    #ffe4e6 35%,
+    #fce7f3 50%,
+    #e0e7ff 70%,
+    #dbeafe 85%,
+    #e0f2fe 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Animated gradient for hero */
+@keyframes aurora {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.aurora-bg {
+  background: linear-gradient(
+    135deg,
+    #fbbf7c,
+    #fda4af,
+    #f9a8d4,
+    #c4b5fd,
+    #7dd3fc,
+    #6ee7b7,
+    #fde047,
+    #fbbf7c
+  );
+  background-size: 400% 400%;
+  animation: aurora 12s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #f59e0b, #ec4899, #8b5cf6, #06b6d4);
+  background-size: 200% 200%;
+  animation: aurora 6s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Bounce arrow animation */
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Glow effect for badge */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(251, 191, 124, 0.4),
+      0 0 40px rgba(253, 164, 175, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(251, 191, 124, 0.6),
+      0 0 60px rgba(253, 164, 175, 0.4);
+  }
+}
+
+.badge-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 3px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection color */
+::selection {
+  background: #fda4af;
+  color: #1e293b;
+}
